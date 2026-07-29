@@ -5,21 +5,21 @@
 class Waggle < Formula
   desc "Local OpenTelemetry viewer — OTLP/HTTP + OTLP/gRPC ingest into SQLite + Honeycomb-style UI"
   homepage "https://github.com/danielloader/waggle"
-  version "0.21.0"
+  version "0.22.0"
   license "GPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_darwin_x86_64.tar.gz"
-      sha256 "f0b5adf2794220511d7220c523ba5d84bc3b58427d5753159d02e92eb86e1282"
+      url "https://github.com/danielloader/waggle/releases/download/v0.22.0/waggle_0.22.0_darwin_x86_64.tar.gz"
+      sha256 "0ab31002a8fa50e847b0070a4c38d75cf24ab817b22ab1e65e01bdd673430e65"
 
       define_method(:install) do
         bin.install "waggle"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_darwin_arm64.tar.gz"
-      sha256 "bb646e495e6b128f6b3c922273e09b9db4f585dbbd99466d1627afcea8716ea3"
+      url "https://github.com/danielloader/waggle/releases/download/v0.22.0/waggle_0.22.0_darwin_arm64.tar.gz"
+      sha256 "f64192427d2a77383791e60f571f1770ff1339bef9e8d913dac8992c153f8b29"
 
       define_method(:install) do
         bin.install "waggle"
@@ -29,15 +29,15 @@ class Waggle < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_linux_x86_64.tar.gz"
-      sha256 "c7511268c1357921ca049217c6a17022d28304255fd67fdd5dce861c406717ca"
+      url "https://github.com/danielloader/waggle/releases/download/v0.22.0/waggle_0.22.0_linux_x86_64.tar.gz"
+      sha256 "b3de78bf6db7382449fd8b19a8fa4314cedceea3e0d22e29f83a4c9ce126eb6c"
       define_method(:install) do
         bin.install "waggle"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_linux_arm64.tar.gz"
-      sha256 "b69b3da0d1610c39a69f9cc2505b0dc90aa8b0fa6dff0b2c1cc0c0a335a5c892"
+      url "https://github.com/danielloader/waggle/releases/download/v0.22.0/waggle_0.22.0_linux_arm64.tar.gz"
+      sha256 "8cba80196cbf086b6f1722e6d51b811b8c69e936507b8fb996c47c7b634e6c59"
       define_method(:install) do
         bin.install "waggle"
       end
