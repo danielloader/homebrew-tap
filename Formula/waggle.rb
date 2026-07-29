@@ -5,21 +5,21 @@
 class Waggle < Formula
   desc "Local OpenTelemetry viewer — OTLP/HTTP + OTLP/gRPC ingest into SQLite + Honeycomb-style UI"
   homepage "https://github.com/danielloader/waggle"
-  version "0.20.0"
+  version "0.21.0"
   license "GPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielloader/waggle/releases/download/v0.20.0/waggle_0.20.0_darwin_x86_64.tar.gz"
-      sha256 "f51c01e4e9d5dc780bc7f63bd95a1b866ac08cc791ae725067abf9b6cc194ec2"
+      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_darwin_x86_64.tar.gz"
+      sha256 "f0b5adf2794220511d7220c523ba5d84bc3b58427d5753159d02e92eb86e1282"
 
       define_method(:install) do
         bin.install "waggle"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielloader/waggle/releases/download/v0.20.0/waggle_0.20.0_darwin_arm64.tar.gz"
-      sha256 "7777ae428b0be0d1dd1082c01079b361f6a78747863901b8c218c40ae9fed449"
+      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_darwin_arm64.tar.gz"
+      sha256 "bb646e495e6b128f6b3c922273e09b9db4f585dbbd99466d1627afcea8716ea3"
 
       define_method(:install) do
         bin.install "waggle"
@@ -29,37 +29,19 @@ class Waggle < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielloader/waggle/releases/download/v0.20.0/waggle_0.20.0_linux_x86_64.tar.gz"
-      sha256 "c0c6e00bd97c123380ec84e3b92a32f5b6c87a9f5ee769176dcd9379f825eff6"
+      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_linux_x86_64.tar.gz"
+      sha256 "c7511268c1357921ca049217c6a17022d28304255fd67fdd5dce861c406717ca"
       define_method(:install) do
         bin.install "waggle"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielloader/waggle/releases/download/v0.20.0/waggle_0.20.0_linux_arm64.tar.gz"
-      sha256 "0c159184cc8005f327b96a304fb3fd72a217bd638b1b60ccad430cdb2009eb5c"
+      url "https://github.com/danielloader/waggle/releases/download/v0.21.0/waggle_0.21.0_linux_arm64.tar.gz"
+      sha256 "b69b3da0d1610c39a69f9cc2505b0dc90aa8b0fa6dff0b2c1cc0c0a335a5c892"
       define_method(:install) do
         bin.install "waggle"
       end
     end
-  end
-
-  def caveats
-    <<~EOS
-      Run waggle in the foreground:
-        waggle
-      Or run it as a background service (LaunchAgent on macOS):
-        brew services start waggle
-      Logs (when running as a service):
-        #{var}/log/waggle.log
-    EOS
-  end
-
-  service do
-    run [opt_bin/"waggle", "--no-open-browser"]
-    keep_alive true
-    log_path var/"log/waggle.log"
-    error_log_path var/"log/waggle.log"
   end
 
   test do
