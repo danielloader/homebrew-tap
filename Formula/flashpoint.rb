@@ -5,21 +5,21 @@
 class Flashpoint < Formula
   desc "Hot reload for Go HTTP servers with a Vite/React front end, without dropped requests"
   homepage "https://github.com/danielloader/flashpoint"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.0/flashpoint_0.3.0_darwin_x86_64.tar.gz"
-      sha256 "0b36c5aba8bb58d9d41422c0446047976394647526891be0f1c3e2720e7ac3a5"
+      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.1/flashpoint_0.3.1_darwin_x86_64.tar.gz"
+      sha256 "5a36a8746a691f620bca902a66c192d04a5e05840885d36e01a969b671b2b66c"
 
       define_method(:install) do
         bin.install "flashpoint"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.0/flashpoint_0.3.0_darwin_arm64.tar.gz"
-      sha256 "03aba2738286d2a79f4820ac9b4b393fcb61fa7691f09012deee5d382cdffa65"
+      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.1/flashpoint_0.3.1_darwin_arm64.tar.gz"
+      sha256 "b6037e4a7a8a662ad151b513a6b13d1015b698704a9e6f66bb834719f95a0333"
 
       define_method(:install) do
         bin.install "flashpoint"
@@ -29,15 +29,15 @@ class Flashpoint < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.0/flashpoint_0.3.0_linux_x86_64.tar.gz"
-      sha256 "f761337b18b3d9ec556eee625de8bde425830d6da1e809e421a9899f12f52bb7"
+      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.1/flashpoint_0.3.1_linux_x86_64.tar.gz"
+      sha256 "a220d68fdf669a4d6818f31dcdc3f8c1de19b8e3e3616cdc6b68a4193765a67f"
       define_method(:install) do
         bin.install "flashpoint"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.0/flashpoint_0.3.0_linux_arm64.tar.gz"
-      sha256 "df47851aeae290bf8a3f6673efa283b841817b3fa2853fae57fa228f8756dca8"
+      url "https://github.com/danielloader/flashpoint/releases/download/v0.3.1/flashpoint_0.3.1_linux_arm64.tar.gz"
+      sha256 "f99ae8a6329e0b9723a3e9b6d3ee770366990897f0352c82b1880bfa5ed68350"
       define_method(:install) do
         bin.install "flashpoint"
       end
